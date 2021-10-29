@@ -1,0 +1,46 @@
+idklub,imeklub,arenaklub,savdrzava,godosnutka,imeigrac,prezimeigrac,brojdresa,pozicijaigrac,idtrener,imetrener,prezimetrener
+1,New York Knicks,Madison Square Garden,New York,1946,Derrick,Rose,4,PG,15,Tom,Thibodeau
+1,New York Knicks,Madison Square Garden,New York,1946,Julius,Randle,30,PF,15,Tom,Thibodeau
+1,New York Knicks,Madison Square Garden,New York,1946,Taj,Gibson,67,PF,15,Tom,Thibodeau
+2,Golden State Warriors,Chase Center,California,1946,Stephen,Curry,30,PG,14,Steve,Kerr
+2,Golden State Warriors,Chase Center,California,1946,Draymond,Green,23,PF,14,Steve,Kerr
+2,Golden State Warriors,Chase Center,California,1946,Klay,Thompson,11,SG,14,Steve,Kerr
+3,Milwaukee Bucks,Fiserv Forum,Wisconsin,1968,Jrue,Holiday,21,PG,13,Mike,Budenholzer
+3,Milwaukee Bucks,Fiserv Forum,Wisconsin,1968,Giannis,Antetokuonmpo,34,PF,13,Mike,Budenholzer
+3,Milwaukee Bucks,Fiserv Forum,Wisconsin,1968,Khris,Middleton,22,SF,13,Mike,Budenholzer
+4,Chicago Bulls,United Center,Illinois,1966,Zach,LaVine,8,SG,12,Billy,Donovan
+4,Chicago Bulls,United Center,Illinois,1966,Nikola,Vucevic,9,C,12,Billy,Donovan
+4,Chicago Bulls,United Center,Illinois,1966,Alex,Caruso,6,PG,12,Billy,Donovan
+5,Charlotte Hornets,Spectrum Center,North Carolina,1988,LaMelo,Ball,2,PG,11,James,Borrego
+5,Charlotte Hornets,Spectrum Center,North Carolina,1988,Gordon,Hayward,20,SF,11,James,Borrego
+5,Charlotte Hornets,Spectrum Center,North Carolina,1988,Miles,Bridges,0,SF,11,James,Borrego
+6,New Orleans Pelicans,Smoothie King Center,Lousiana,1988,Zion,Williamson,1,PF,10,Willie,Green
+6,New Orleans Pelicans,Smoothie King Center,Lousiana,1988,Josh,Hart,3,SG,10,Willie,Green
+6,New Orleans Pelicans,Smoothie King Center,Lousiana,1988,Brandon,Ingram,14,SF,10,Willie,Green
+7,LA Lakers,Staples Center,California,1947,Dwight,Howard,39,C,9,Frank,Vogel
+7,LA Lakers,Staples Center,California,1947,LeBron,James,6,SF,9,Frank,Vogel
+7,LA Lakers,Staples Center,California,1947,Anthony,Davis,3,PF,9,Frank,Vogel
+8,Brooklyn Nets,Barclays Center,New York,1967,James,Harden,13,SG,8,Steve,Nash
+8,Brooklyn Nets,Barclays Center,New York,1967,Kevin,Durant,7,SF,8,Steve,Nash
+8,Brooklyn Nets,Barclays Center,New York,1967,Kyrie,Irving,11,PG,8,Steve,Nash
+9,Boston Celtics,TD Garden,Massachusetts,1946,Jayson,Tatum,0,SF,7,Ime,Udoka
+9,Boston Celtics,TD Garden,Massachusetts,1946,Jaylen,Brown,7,SG,7,Ime,Udoka
+9,Boston Celtics,TD Garden,Massachusetts,1946,Marcus,Smart,36,PG,7,Ime,Udoka
+10,Phoenix Suns,Footprint Center,Arizona,1968,Chris,Paul,3,PG,6,Monty,Williams
+10,Phoenix Suns,Footprint Center,Arizona,1968,Dario,Saric,20,PF,6,Monty,Williams
+10,Phoenix Suns,Footprint Center,Arizona,1968,Devin,Booker,1,SG,6,Monty,Williams
+11,Dallas Mavericks,American Airlines Center,Texas,1980,Kristaps,Porzingis,6,PF,5,Jason,Kidd
+11,Dallas Mavericks,American Airlines Center,Texas,1980,Boban,Marjanovic,51,C,5,Jason,Kidd
+11,Dallas Mavericks,American Airlines Center,Texas,1980,Luka,Doncic,77,PG,5,Jason,Kidd
+12,Denver Nuggets,Ball Arena,Colorado,1967,Nikola,Jokic,15,C,4,Michael,Malone
+12,Denver Nuggets,Ball Arena,Colorado,1967,Michael,Porter Jr.,1,SF,4,Michael,Malone
+12,Denver Nuggets,Ball Arena,Colorado,1967,Jamal,Murray,27,PG,4,Michael,Malone
+13,Atlanta Hawks,State Farm Arena,Georgia,1946,Trae,Young,11,PG,3,Nate,McMillan
+13,Atlanta Hawks,State Farm Arena,Georgia,1946,Kevin,Huerter,3,SG,3,Nate,McMillan
+13,Atlanta Hawks,State Farm Arena,Georgia,1946,John,Collins,20,PF,3,Nate,McMillan
+14,Philadelphia 76ers,Wells Fargo Center,Pennsylvania,1946,Ben,Simmons,25,PG,2,Doc,Rivers
+14,Philadelphia 76ers,Wells Fargo Center,Pennsylvania,1946,Joel,Embiid,21,C,2,Doc,Rivers
+14,Philadelphia 76ers,Wells Fargo Center,Pennsylvania,1946,Tobias,Harris,12,SF,2,Doc,Rivers
+15,Portland Trailblazers,Moda Center,Oregon,1970,Jusuf,Nurkic,27,C,1,Chauncey,Billups
+15,Portland Trailblazers,Moda Center,Oregon,1970,CJ,McCollum,3,SG,1,Chauncey,Billups
+15,Portland Trailblazers,Moda Center,Oregon,1970,Damian,Lillard,0,PG,1,Chauncey,Billups

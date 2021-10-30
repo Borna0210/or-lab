@@ -23,6 +23,7 @@ atributes:
   imetrener: Ime trenera određenog kluba  
   prezimetrener: Prezime trenera određenog kluba  
 ---
+
 # Readme.md 
 ### Ovdje možete saznati sve što vas zanima o tablicama u mojoj bazi podataka i informacijama koje su u njima zapisane.
 ---

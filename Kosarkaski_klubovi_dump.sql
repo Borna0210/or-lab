@@ -29,7 +29,8 @@ CREATE TABLE public.igrac (
     prezimeigrac character varying(255) NOT NULL,
     brojdresa integer NOT NULL,
     pozicijaigrac character varying(2) NOT NULL,
-    idklub integer NOT NULL
+    idklub integer NOT NULL,
+    uni_hs_club character varying(255) NOT NULL
 );
 
 
@@ -55,7 +56,6 @@ ALTER TABLE public.klub OWNER TO postgres;
 --
 
 CREATE TABLE public.trener (
-    idtrener integer NOT NULL,
     imetrener character varying(255) NOT NULL,
     prezimetrener character varying(255) NOT NULL,
     idklub integer NOT NULL
@@ -68,52 +68,52 @@ ALTER TABLE public.trener OWNER TO postgres;
 -- Data for Name: igrac; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.igrac (imeigrac, prezimeigrac, brojdresa, pozicijaigrac, idklub) FROM stdin;
-Kevin	Durant	7	SF	8
-James	Harden	13	SG	8
-Kyrie	Irving	11	PG	8
-Derrick	Rose	4	PG	1
-Julius	Randle	30	PF	1
-Taj	Gibson	67	PF	1
-Stephen	Curry	30	PG	2
-Klay	Thompson	11	SG	2
-Draymond	Green	23	PF	2
-Giannis	Antetokuonmpo	34	PF	3
-Khris	Middleton	22	SF	3
-Jrue	Holiday	21	PG	3
-Zach	LaVine	8	SG	4
-Alex	Caruso	6	PG	4
-LaMelo	Ball	2	PG	5
-Miles	Bridges	0	SF	5
-Gordon	Hayward	20	SF	5
-Zion	Williamson	1	PF	6
-Brandon	Ingram	14	SF	6
-Josh	Hart	3	SG	6
-LeBron	James	6	SF	7
-Anthony	Davis	3	PF	7
-Dwight	Howard	39	C	7
-Jayson	Tatum	0	SF	9
-Jaylen	Brown	7	SG	9
-Marcus	Smart	36	PG	9
-Devin	Booker	1	SG	10
-Chris	Paul	3	PG	10
-Kristaps	Porzingis	6	PF	11
-Michael	Porter Jr.	1	SF	12
-Jamal	Murray	27	PG	12
-Trae	Young	11	PG	13
-Kevin	Huerter	3	SG	13
-John	Collins	20	PF	13
-Ben	Simmons	25	PG	14
-Joel	Embiid	21	C	14
-Tobias	Harris	12	SF	14
-Damian	Lillard	0	PG	15
-CJ	McCollum	3	SG	15
-Luka	Doncic	77	PG	11
-Dario	Saric	20	PF	10
-Boban	Marjanovic	51	C	11
-Jusuf	Nurkic	27	C	15
-Nikola	Jokic	15	C	12
-Nikola	Vucevic	9	C	4
+COPY public.igrac (imeigrac, prezimeigrac, brojdresa, pozicijaigrac, idklub, uni_hs_club) FROM stdin;
+Derrick	Rose	4	PG	1	Memphis
+Julius	Randle	30	PF	1	Kentucky
+Taj	Gibson	67	PF	1	USC
+Stephen	Curry	30	PG	2	Davidson
+Draymond	Green	23	PF	2	Michigan State
+Klay	Thompson	11	SG	2	Washington State
+Jrue	Holiday	21	PG	3	UCLA
+Giannis	Antetokuonmpo	34	PF	3	Filathlitikos
+Khris	Middleton	22	SF	3	Texas A&M
+Zach	LaVine	8	SG	4	UCLA
+Nikola	Vucevic	9	C	4	USC
+Alex	Caruso	6	PG	4	Texas A&M
+LaMelo	Ball	2	PG	5	Illawarra Hawks
+Gordon	Hayward	20	SF	5	Butler
+Miles	Bridges	0	SF	5	Michigan State
+Zion	Williamson	1	PF	6	Duke
+Josh	Hart	3	SG	6	Villanova
+Brandon	Ingram	14	SF	6	Duke
+Dwight	Howard	39	C	7	Southwest Atlanta Christian Academy
+LeBron	James	6	SF	7	St. Vincent–St. Mary
+Anthony	Davis	3	PF	7	Kentucky
+James	Harden	13	SG	8	Arizona State
+Kevin	Durant	7	SF	8	Texas
+Kyrie	Irving	11	PG	8	Duke
+Jayson	Tatum	0	SF	9	Duke
+Jaylen	Brown	7	SG	9	California
+Marcus	Smart	36	PG	9	Oklahoma State
+Chris	Paul	3	PG	10	Wake Forest
+Dario	Saric	20	PF	10	Anadolu Efes
+Devin	Booker	1	SG	10	Kentucky
+Kristaps	Porzingis	6	PF	11	Sevilla
+Boban	Marjanovic	51	C	11	Crvena Zvezda
+Luka	Doncic	77	PG	11	Real Madrid
+Nikola	Jokic	15	C	12	Mega Basket
+Michael	Porter Jr.	1	SF	12	Missouri
+Jamal	Murray	27	PG	12	Kentucky
+Trae	Young	11	PG	13	Oklahoma
+Kevin	Huerter	3	SG	13	Maryland
+John	Collins	20	PF	13	Wake Forest
+Ben	Simmons	25	PG	14	LSU
+Joel	Embiid	21	C	14	Kansas
+Tobias	Harris	12	SF	14	Tennessee
+Jusuf	Nurkic	27	C	15	Cedevita
+Damian	Lillard	0	PG	15	Weber State
+CJ	McCollum	3	SG	15	Lehigh
 \.
 
 
@@ -144,22 +144,22 @@ COPY public.klub (idklub, imeklub, arenaklub, savdrzava, godosnutka) FROM stdin;
 -- Data for Name: trener; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.trener (idtrener, imetrener, prezimetrener, idklub) FROM stdin;
-1	Chauncey	Billups	15
-2	Doc	Rivers	14
-3	Nate	McMillan	13
-4	Michael	Malone	12
-5	Jason	Kidd	11
-6	Monty	Williams	10
-7	Ime	Udoka	9
-8	Steve	Nash	8
-9	Frank	Vogel	7
-10	Willie	Green	6
-11	James	Borrego	5
-12	Billy	Donovan	4
-13	Mike	Budenholzer	3
-14	Steve	Kerr	2
-15	Tom	Thibodeau	1
+COPY public.trener (imetrener, prezimetrener, idklub) FROM stdin;
+Chauncey	Billups	15
+Doc	Rivers	14
+Nate	McMillan	13
+Michael	Malone	12
+Jason	Kidd	11
+Monty	Williams	10
+Ime	Udoka	9
+Steve	Nash	8
+Frank	Vogel	7
+Willie	Green	6
+James	Borrego	5
+Billy	Donovan	4
+Mike	Budenholzer	3
+Steve	Kerr	2
+Tom	Thibodeau	1
 \.
 
 
@@ -180,19 +180,11 @@ ALTER TABLE ONLY public.klub
 
 
 --
--- Name: trener pktrener; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: trener pkklubtrener; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.trener
-    ADD CONSTRAINT pktrener PRIMARY KEY (idtrener);
-
-
---
--- Name: trener uniqueidklub; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.trener
-    ADD CONSTRAINT uniqueidklub UNIQUE (idklub);
+    ADD CONSTRAINT pkklubtrener PRIMARY KEY (idklub);
 
 
 --

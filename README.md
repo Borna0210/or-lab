@@ -18,8 +18,8 @@ atributes:
   imeigrac: Ime igrača određenog kluba  
   prezimeigrac: Prezime igrača određenog kluba  
   brojdresa: Broj na dresu igrača  
-  pozicijaigrac: Pozicija na kojoj igrač igra (PG,SG,SF,PF,C)  
-  idtrener: ID trenera  
+  pozicijaigrac: Pozicija na kojoj igrač igra (PG,SG,SF,PF,C)
+  uni_hs_club: Sveučilište za koje je igrač igrao, ako je umjesto za sveučilište igrao u nekom klubu, piše ime kluba, a ako je direktno iz srednje škole došao u NBA, piše ime srednje škole
   imetrener: Ime trenera određenog kluba  
   prezimetrener: Prezime trenera određenog kluba  
 ---
@@ -31,10 +31,10 @@ atributes:
 Popis 15 klubova u NBA-u, informacije koje imamo o njima su njihovo ime, ime njihove arene, godina njihovog osnutka, savezna država u kojoj igraju i jedinstveni identifikacijski broj svakog kluba.
 
 ## Igrač
-Popis 3 igrača iz svakog od 15 klubova, podaci koje imamo o njima su njihovo ime, prezime, pozicija na kojoj igraju kao i broj na njihovom dresu.
+Popis 3 igrača iz svakog od 15 klubova, podaci koje imamo o njima su njihovo ime, prezime, pozicija na kojoj igraju, broj na njihovom dresu i sveučilište za koje su igrali, ako nisu igrali za sveučilište onda piše ime srednje škole ili kluba iz kojeg su došli u NBA.
 
 ## Trener
-Popis trenera svih 15 klubova s popisa, informacije koje imamo o njima su njihovo ime, prezime te jedinstveni identifikacijski broj svakog trenera i kluba koji treniraju.
+Popis trenera svih 15 klubova s popisa, informacije koje imamo o njima su njihovo ime i prezime.
 
 ## Košarkaški_klubovi
 Konačna tablica u kojoj imamo popis klubova s pripadajućim igračima i trenerom, povezani su atributom identifikacijskog broja kluba, nje nema u bazi podataka već je dobivena prirodnim spajanjem tri prethodne tablice i tako je zapisana u CSV i JSON datoteci.

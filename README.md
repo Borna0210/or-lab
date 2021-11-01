@@ -37,4 +37,4 @@ Popis 3 igrača iz svakog od 15 klubova, podaci koje imamo o njima su njihovo im
 Popis trenera svih 15 klubova s popisa, informacije koje imamo o njima su njihovo ime, prezime te jedinstveni identifikacijski broj svakog trenera i kluba koji treniraju.
 
 ## Košarkaški_klubovi
-Konačna tablica u kojoj imamo popis klubova s pripadajućim igračima i trenerom, povezani su atributom identifikacijskog broja kluba.
+Konačna tablica u kojoj imamo popis klubova s pripadajućim igračima i trenerom, povezani su atributom identifikacijskog broja kluba, nje nema u bazi podataka već je dobivena prirodnim spajanjem tri prethodne tablice i tako je zapisana u CSV i JSON datoteci.

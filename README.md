@@ -38,3 +38,10 @@ Popis trenera svih 15 klubova s popisa, informacije koje imamo o njima su njihov
 
 ## Košarkaški_klubovi
 Konačna tablica u kojoj imamo popis klubova s pripadajućim igračima i trenerom, povezani su atributom identifikacijskog broja kluba, nje nema u bazi podataka već je dobivena prirodnim spajanjem tri prethodne tablice i tako je zapisana u CSV i JSON datoteci.
+
+---
+
+#Updates:
+
+2. LAB - Db i Index.ejs nalaze se u JS/views folderu, server je u nodejs obliku, nisam uspio implementirati ajax funkcionalnost da filtriram na strani servera i vraćam te podatke nazad bez da mi se osvježava stranica. Nisam bio siguran smije li se filtrirati direktno iz tablice koju dobijemo u HTML-u ili upit mora ići nazad u bazu, ali ostalo mi je da ste govorili ne priznajete ako samo filtriramo tablicu, ako se moglo tako, onda sam izgubio jako puno vremena pokušavajući druge stvari, ali 
+da, to je to

@@ -1,0 +1,924 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "Klubovi": [
+                {
+                    "Ime kluba": "New York Knicks",
+                    "Arena kluba": "Madison Square Garden",
+                    "Savezna drzava kluba": "New York",
+                    "Godina osnutka kluba": 1946,
+                    "ID kluba": 1,
+                    "Igraci": [
+                        {
+                            "Ime": "Derrick",
+                            "Prezime": "Rose",
+                            "Pozicija": "PG",
+                            "Broj na dresu": 4,
+                            "Uni/HS/Klub": "Memphis"
+                        },
+                        {
+                            "Ime": "Julius",
+                            "Prezime": "Randle",
+                            "Pozicija": "PF",
+                            "Broj na dresu": 30,
+                            "Uni/HS/Klub": "Kentucky"
+                        },
+                        {
+                            "Ime": "Taj",
+                            "Prezime": "Gibson",
+                            "Pozicija": "PF",
+                            "Broj na dresu": 67,
+                            "Uni/HS/Klub": "USC"
+                        }
+                    ],
+                    "Trener": [
+                        {
+                            "Ime": "Tom",
+                            "Prezime": "Thibodeau"
+                        }
+                    ]
+                },
+                {
+                    "Ime kluba": "Golden State Warriors",
+                    "Arena kluba": "Chase Center",
+                    "Savezna drzava kluba": "California",
+                    "Godina osnutka kluba": 1946,
+                    "ID kluba": 2,
+                    "Igraci": [
+                        {
+                            "Ime": "Stephen",
+                            "Prezime": "Curry",
+                            "Pozicija": "PG",
+                            "Broj na dresu": 30,
+                            "Uni/HS/Klub": "Davidson"
+                        },
+                        {
+                            "Ime": "Draymond",
+                            "Prezime": "Green",
+                            "Pozicija": "PF",
+                            "Broj na dresu": 23,
+                            "Uni/HS/Klub": "Michigan State"
+                        },
+                        {
+                            "Ime": "Klay",
+                            "Prezime": "Thompson",
+                            "Pozicija": "SG",
+                            "Broj na dresu": 11,
+                            "Uni/HS/Klub": "Washington State"
+                        }
+                    ],
+                    "Trener": [
+                        {
+                            "Ime": "Steve",
+                            "Prezime": "Kerr"
+                        }
+                    ]
+                },
+                {
+                    "Ime kluba": "Milwaukee Bucks",
+                    "Arena kluba": "Fiserv Forum",
+                    "Savezna drzava kluba": "Wisconsin",
+                    "Godina osnutka kluba": 1968,
+                    "ID kluba": 3,
+                    "Igraci": [
+                        {
+                            "Ime": "Jrue",
+                            "Prezime": "Holiday",
+                            "Pozicija": "PG",
+                            "Broj na dresu": 21,
+                            "Uni/HS/Klub": "UCLA"
+                        },
+                        {
+                            "Ime": "Giannis",
+                            "Prezime": "Antetokuonmpo",
+                            "Pozicija": "PF",
+                            "Broj na dresu": 34,
+                            "Uni/HS/Klub": "Filathlitikos"
+                        },
+                        {
+                            "Ime": "Khris",
+                            "Prezime": "Middleton",
+                            "Pozicija": "SF",
+                            "Broj na dresu": 22,
+                            "Uni/HS/Klub": "Texas A&M"
+                        }
+                    ],
+                    "Trener": [
+                        {
+                            "Ime": "Mike",
+                            "Prezime": "Budenholzer"
+                        }
+                    ]
+                },
+                {
+                    "Ime kluba": "Chicago Bulls",
+                    "Arena kluba": "United Center",
+                    "Savezna drzava kluba": "Illinois",
+                    "Godina osnutka kluba": 1966,
+                    "ID kluba": 4,
+                    "Igraci": [
+                        {
+                            "Ime": "Zach",
+                            "Prezime": "LaVine",
+                            "Pozicija": "SG",
+                            "Broj na dresu": 8,
+                            "Uni/HS/Klub": "UCLA"
+                        },
+                        {
+                            "Ime": "Nikola",
+                            "Prezime": "Vucevic",
+                            "Pozicija": "C",
+                            "Broj na dresu": 9,
+                            "Uni/HS/Klub": "USC"
+                        },
+                        {
+                            "Ime": "Alex",
+                            "Prezime": "Caruso",
+                            "Pozicija": "PG",
+                            "Broj na dresu": 6,
+                            "Uni/HS/Klub": "Texas A&M"
+                        }
+                    ],
+                    "Trener": [
+                        {
+                            "Ime": "Billy",
+                            "Prezime": "Donovan"
+                        }
+                    ]
+                },
+                {
+                    "Ime kluba": "Charlotte Hornets",
+                    "Arena kluba": "Spectrum Center",
+                    "Savezna drzava kluba": "North Carolina",
+                    "Godina osnutka kluba": 1988,
+                    "ID kluba": 5,
+                    "Igraci": [
+                        {
+                            "Ime": "LaMelo",
+                            "Prezime": "Ball",
+                            "Pozicija": "PG",
+                            "Broj na dresu": 2,
+                            "Uni/HS/Klub": "Illawarra Hawks"
+                        },
+                        {
+                            "Ime": "Gordon",
+                            "Prezime": "Hayward",
+                            "Pozicija": "SF",
+                            "Broj na dresu": 20,
+                            "Uni/HS/Klub": "Butler"
+                        },
+                        {
+                            "Ime": "Miles",
+                            "Prezime": "Bridges",
+                            "Pozicija": "SF",
+                            "Broj na dresu": 0,
+                            "Uni/HS/Klub": "Michigan State"
+                        }
+                    ],
+                    "Trener": [
+                        {
+                            "Ime": "James",
+                            "Prezime": "Borrego"
+                        }
+                    ]
+                },
+                {
+                    "Ime kluba": "New Orleans Pelicans",
+                    "Arena kluba": "Smoothie King Center",
+                    "Savezna drzava kluba": "Lousiana",
+                    "Godina osnutka kluba": 1988,
+                    "ID kluba": 6,
+                    "Igraci": [
+                        {
+                            "Ime": "Zion",
+                            "Prezime": "Williamson",
+                            "Pozicija": "PF",
+                            "Broj na dresu": 1,
+                            "Uni/HS/Klub": "Duke"
+                        },
+                        {
+                            "Ime": "Josh",
+                            "Prezime": "Hart",
+                            "Pozicija": "SG",
+                            "Broj na dresu": 3,
+                            "Uni/HS/Klub": "Villanova"
+                        },
+                        {
+                            "Ime": "Brandon",
+                            "Prezime": "Ingram",
+                            "Pozicija": "SF",
+                            "Broj na dresu": 14,
+                            "Uni/HS/Klub": "Duke"
+                        }
+                    ],
+                    "Trener": [
+                        {
+                            "Ime": "Willie",
+                            "Prezime": "Green"
+                        }
+                    ]
+                },
+                {
+                    "Ime kluba": "LA Lakers",
+                    "Arena kluba": "Staples Center",
+                    "Savezna drzava kluba": "California",
+                    "Godina osnutka kluba": 1947,
+                    "ID kluba": 7,
+                    "Igraci": [
+                        {
+                            "Ime": "Dwight",
+                            "Prezime": "Howard",
+                            "Pozicija": "C",
+                            "Broj na dresu": 39,
+                            "Uni/HS/Klub": "Southwest Atlanta Christian Academy"
+                        },
+                        {
+                            "Ime": "LeBron",
+                            "Prezime": "James",
+                            "Pozicija": "SF",
+                            "Broj na dresu": 6,
+                            "Uni/HS/Klub": "St. Vincent–St. Mary"
+                        },
+                        {
+                            "Ime": "Anthony",
+                            "Prezime": "Davis",
+                            "Pozicija": "PF",
+                            "Broj na dresu": 3,
+                            "Uni/HS/Klub": "Kentucky"
+                        }
+                    ],
+                    "Trener": [
+                        {
+                            "Ime": "Frank",
+                            "Prezime": "Vogel"
+                        }
+                    ]
+                },
+                {
+                    "Ime kluba": "Brooklyn Nets",
+                    "Arena kluba": "Barclays Center",
+                    "Savezna drzava kluba": "New York",
+                    "Godina osnutka kluba": 1967,
+                    "ID kluba": 8,
+                    "Igraci": [
+                        {
+                            "Ime": "James",
+                            "Prezime": "Harden",
+                            "Pozicija": "SG",
+                            "Broj na dresu": 13,
+                            "Uni/HS/Klub": "Arizona State"
+                        },
+                        {
+                            "Ime": "Kevin",
+                            "Prezime": "Durant",
+                            "Pozicija": "SF",
+                            "Broj na dresu": 7,
+                            "Uni/HS/Klub": "Texas"
+                        },
+                        {
+                            "Ime": "Kyrie",
+                            "Prezime": "Irving",
+                            "Pozicija": "PG",
+                            "Broj na dresu": 11,
+                            "Uni/HS/Klub": "Duke"
+                        }
+                    ],
+                    "Trener": [
+                        {
+                            "Ime": "Steve",
+                            "Prezime": "Nash"
+                        }
+                    ]
+                },
+                {
+                    "Ime kluba": "Boston Celtics",
+                    "Arena kluba": "TD Garden",
+                    "Savezna drzava kluba": "Massachusetts",
+                    "Godina osnutka kluba": 1946,
+                    "ID kluba": 9,
+                    "Igraci": [
+                        {
+                            "Ime": "Jayson",
+                            "Prezime": "Tatum",
+                            "Pozicija": "SF",
+                            "Broj na dresu": 0,
+                            "Uni/HS/Klub": "Duke"
+                        },
+                        {
+                            "Ime": "Jaylen",
+                            "Prezime": "Brown",
+                            "Pozicija": "SG",
+                            "Broj na dresu": 7,
+                            "Uni/HS/Klub": "California"
+                        },
+                        {
+                            "Ime": "Marcus",
+                            "Prezime": "Smart",
+                            "Pozicija": "PG",
+                            "Broj na dresu": 36,
+                            "Uni/HS/Klub": "Oklahoma State"
+                        }
+                    ],
+                    "Trener": [
+                        {
+                            "Ime": "Ime",
+                            "Prezime": "Udoka"
+                        }
+                    ]
+                },
+                {
+                    "Ime kluba": "Phoenix Suns",
+                    "Arena kluba": "Footprint Center",
+                    "Savezna drzava kluba": "Arizona",
+                    "Godina osnutka kluba": 1968,
+                    "ID kluba": 10,
+                    "Igraci": [
+                        {
+                            "Ime": "Chris",
+                            "Prezime": "Paul",
+                            "Pozicija": "PG",
+                            "Broj na dresu": 3,
+                            "Uni/HS/Klub": "Wake Forest"
+                        },
+                        {
+                            "Ime": "Dario",
+                            "Prezime": "Saric",
+                            "Pozicija": "PF",
+                            "Broj na dresu": 20,
+                            "Uni/HS/Klub": "Anadolu Efes"
+                        },
+                        {
+                            "Ime": "Devin",
+                            "Prezime": "Booker",
+                            "Pozicija": "SG",
+                            "Broj na dresu": 1,
+                            "Uni/HS/Klub": "Kentucky"
+                        }
+                    ],
+                    "Trener": [
+                        {
+                            "Ime": "Monty",
+                            "Prezime": "Williams"
+                        }
+                    ]
+                },
+                {
+                    "Ime kluba": "Dallas Mavericks",
+                    "Arena kluba": "American Airlines Center",
+                    "Savezna drzava kluba": "Texas",
+                    "Godina osnutka kluba": 1980,
+                    "ID kluba": 11,
+                    "Igraci": [
+                        {
+                            "Ime": "Kristaps",
+                            "Prezime": "Porzingis",
+                            "Pozicija": "PF",
+                            "Broj na dresu": 6,
+                            "Uni/HS/Klub": "Sevilla"
+                        },
+                        {
+                            "Ime": "Boban",
+                            "Prezime": "Marjanovic",
+                            "Pozicija": "C",
+                            "Broj na dresu": 51,
+                            "Uni/HS/Klub": "Crvena Zvezda"
+                        },
+                        {
+                            "Ime": "Luka",
+                            "Prezime": "Doncic",
+                            "Pozicija": "PG",
+                            "Broj na dresu": 77,
+                            "Uni/HS/Klub": "Real Madrid"
+                        }
+                    ],
+                    "Trener": [
+                        {
+                            "Ime": "Jason",
+                            "Prezime": "Kidd"
+                        }
+                    ]
+                },
+                {
+                    "Ime kluba": "Denver Nuggets",
+                    "Arena kluba": "Ball Arena",
+                    "Savezna drzava kluba": "Colorado",
+                    "Godina osnutka kluba": 1967,
+                    "ID kluba": 12,
+                    "Igraci": [
+                        {
+                            "Ime": "Nikola",
+                            "Prezime": "Jokic",
+                            "Pozicija": "C",
+                            "Broj na dresu": 15,
+                            "Uni/HS/Klub": "Mega Basket"
+                        },
+                        {
+                            "Ime": "Michael",
+                            "Prezime": "Porter Jr.",
+                            "Pozicija": "SF",
+                            "Broj na dresu": 1,
+                            "Uni/HS/Klub": "Missouri"
+                        },
+                        {
+                            "Ime": "Jamal",
+                            "Prezime": "Murray",
+                            "Pozicija": "PG",
+                            "Broj na dresu": 27,
+                            "Uni/HS/Klub": "Kentucky"
+                        }
+                    ],
+                    "Trener": [
+                        {
+                            "Ime": "Michael",
+                            "Prezime": "Malone"
+                        }
+                    ]
+                },
+                {
+                    "Ime kluba": "Atlanta Hawks",
+                    "Arena kluba": "State Farm Arena",
+                    "Savezna drzava kluba": "Georgia",
+                    "Godina osnutka kluba": 1946,
+                    "ID kluba": 13,
+                    "Igraci": [
+                        {
+                            "Ime": "Trae",
+                            "Prezime": "Young",
+                            "Pozicija": "PG",
+                            "Broj na dresu": 11,
+                            "Uni/HS/Klub": "Oklahoma"
+                        },
+                        {
+                            "Ime": "Kevin",
+                            "Prezime": "Huerter",
+                            "Pozicija": "SG",
+                            "Broj na dresu": 3,
+                            "Uni/HS/Klub": "Maryland"
+                        },
+                        {
+                            "Ime": "John",
+                            "Prezime": "Collins",
+                            "Pozicija": "PF",
+                            "Broj na dresu": 20,
+                            "Uni/HS/Klub": "Wake Forest"
+                        }
+                    ],
+                    "Trener": [
+                        {
+                            "Ime": "Nate",
+                            "Prezime": "McMillan"
+                        }
+                    ]
+                },
+                {
+                    "Ime kluba": "Philadelphia 76ers",
+                    "Arena kluba": "Wells Fargo Center",
+                    "Savezna drzava kluba": "Pennsylvania",
+                    "Godina osnutka kluba": 1946,
+                    "ID kluba": 14,
+                    "Igraci": [
+                        {
+                            "Ime": "Ben",
+                            "Prezime": "Simmons",
+                            "Pozicija": "PG",
+                            "Broj na dresu": 25,
+                            "Uni/HS/Klub": "LSU"
+                        },
+                        {
+                            "Ime": "Joel",
+                            "Prezime": "Embiid",
+                            "Pozicija": "C",
+                            "Broj na dresu": 21,
+                            "Uni/HS/Klub": "Kansas"
+                        },
+                        {
+                            "Ime": "Tobias",
+                            "Prezime": "Harris",
+                            "Pozicija": "SF",
+                            "Broj na dresu": 12,
+                            "Uni/HS/Klub": "Tennessee"
+                        }
+                    ],
+                    "Trener": [
+                        {
+                            "Ime": "Doc",
+                            "Prezime": "Rivers"
+                        }
+                    ]
+                },
+                {
+                    "Ime kluba": "Portland Trailblazers",
+                    "Arena kluba": "Moda Center",
+                    "Savezna drzava kluba": "Oregon",
+                    "Godina osnutka kluba": 1970,
+                    "ID kluba": 15,
+                    "Igraci": [
+                        {
+                            "Ime": "Jusuf",
+                            "Prezime": "Nurkic",
+                            "Pozicija": "C",
+                            "Broj na dresu": 27,
+                            "Uni/HS/Klub": "Cedevita"
+                        },
+                        {
+                            "Ime": "Damian",
+                            "Prezime": "Lillard",
+                            "Pozicija": "PG",
+                            "Broj na dresu": 0,
+                            "Uni/HS/Klub": "Weber State"
+                        },
+                        {
+                            "Ime": "CJ",
+                            "Prezime": "McCollum",
+                            "Pozicija": "SG",
+                            "Broj na dresu": 3,
+                            "Uni/HS/Klub": "Lehigh"
+                        }
+                    ],
+                    "Trener": [
+                        {
+                            "Ime": "Chauncey",
+                            "Prezime": "Billups"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "required": [
+        "Klubovi"
+    ],
+    "properties": {
+        "Klubovi": {
+            "$id": "#/properties/Klubovi",
+            "type": "array",
+            "title": "The Klubovi schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "Ime kluba": "New York Knicks",
+                        "Arena kluba": "Madison Square Garden",
+                        "Savezna drzava kluba": "New York",
+                        "Godina osnutka kluba": 1946,
+                        "ID kluba": 1,
+                        "Igraci": [
+                            {
+                                "Ime": "Derrick",
+                                "Prezime": "Rose",
+                                "Pozicija": "PG",
+                                "Broj na dresu": 4,
+                                "Uni/HS/Klub": "Memphis"
+                            },
+                            {
+                                "Ime": "Julius",
+                                "Prezime": "Randle",
+                                "Pozicija": "PF",
+                                "Broj na dresu": 30,
+                                "Uni/HS/Klub": "Kentucky"
+                            },
+                            {
+                                "Ime": "Taj",
+                                "Prezime": "Gibson",
+                                "Pozicija": "PF",
+                                "Broj na dresu": 67,
+                                "Uni/HS/Klub": "USC"
+                            }
+                        ],
+                        "Trener": [
+                            {
+                                "Ime": "Tom",
+                                "Prezime": "Thibodeau"
+                            }
+                        ]
+                    },
+                    {
+                        "Ime kluba": "Golden State Warriors",
+                        "Arena kluba": "Chase Center",
+                        "Savezna drzava kluba": "California",
+                        "Godina osnutka kluba": 1946,
+                        "ID kluba": 2,
+                        "Igraci": [
+                            {
+                                "Ime": "Stephen",
+                                "Prezime": "Curry",
+                                "Pozicija": "PG",
+                                "Broj na dresu": 30,
+                                "Uni/HS/Klub": "Davidson"
+                            },
+                            {
+                                "Ime": "Draymond",
+                                "Prezime": "Green",
+                                "Pozicija": "PF",
+                                "Broj na dresu": 23,
+                                "Uni/HS/Klub": "Michigan State"
+                            },
+                            {
+                                "Ime": "Klay",
+                                "Prezime": "Thompson",
+                                "Pozicija": "SG",
+                                "Broj na dresu": 11,
+                                "Uni/HS/Klub": "Washington State"
+                            }
+                        ],
+                        "Trener": [
+                            {
+                                "Ime": "Steve",
+                                "Prezime": "Kerr"
+                            }
+                        ]
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/Klubovi/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/Klubovi/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "Ime kluba": "New York Knicks",
+                                "Arena kluba": "Madison Square Garden",
+                                "Savezna drzava kluba": "New York",
+                                "Godina osnutka kluba": 1946,
+                                "ID kluba": 1,
+                                "Igraci": [
+                                    {
+                                        "Ime": "Derrick",
+                                        "Prezime": "Rose",
+                                        "Pozicija": "PG",
+                                        "Broj na dresu": 4,
+                                        "Uni/HS/Klub": "Memphis"
+                                    },
+                                    {
+                                        "Ime": "Julius",
+                                        "Prezime": "Randle",
+                                        "Pozicija": "PF",
+                                        "Broj na dresu": 30,
+                                        "Uni/HS/Klub": "Kentucky"
+                                    },
+                                    {
+                                        "Ime": "Taj",
+                                        "Prezime": "Gibson",
+                                        "Pozicija": "PF",
+                                        "Broj na dresu": 67,
+                                        "Uni/HS/Klub": "USC"
+                                    }
+                                ],
+                                "Trener": [
+                                    {
+                                        "Ime": "Tom",
+                                        "Prezime": "Thibodeau"
+                                    }
+                                ]
+                            }
+                        ],
+                        "required": [
+                            "Ime kluba",
+                            "Arena kluba",
+                            "Savezna drzava kluba",
+                            "Godina osnutka kluba",
+                            "ID kluba",
+                            "Igraci",
+                            "Trener"
+                        ],
+                        "properties": {
+                            "Ime kluba": {
+                                "$id": "#/properties/Klubovi/items/anyOf/0/properties/Ime%20kluba",
+                                "type": "string",
+                                "title": "The Ime kluba schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "New York Knicks"
+                                ]
+                            },
+                            "Arena kluba": {
+                                "$id": "#/properties/Klubovi/items/anyOf/0/properties/Arena%20kluba",
+                                "type": "string",
+                                "title": "The Arena kluba schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "Madison Square Garden"
+                                ]
+                            },
+                            "Savezna drzava kluba": {
+                                "$id": "#/properties/Klubovi/items/anyOf/0/properties/Savezna%20drzava%20kluba",
+                                "type": "string",
+                                "title": "The Savezna drzava kluba schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "New York"
+                                ]
+                            },
+                            "Godina osnutka kluba": {
+                                "$id": "#/properties/Klubovi/items/anyOf/0/properties/Godina%20osnutka%20kluba",
+                                "type": "integer",
+                                "title": "The Godina osnutka kluba schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    1946
+                                ]
+                            },
+                            "ID kluba": {
+                                "$id": "#/properties/Klubovi/items/anyOf/0/properties/ID%20kluba",
+                                "type": "integer",
+                                "title": "The ID kluba schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    1
+                                ]
+                            },
+                            "Igraci": {
+                                "$id": "#/properties/Klubovi/items/anyOf/0/properties/Igraci",
+                                "type": "array",
+                                "title": "The Igraci schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": [],
+                                "examples": [
+                                    [
+                                        {
+                                            "Ime": "Derrick",
+                                            "Prezime": "Rose",
+                                            "Pozicija": "PG",
+                                            "Broj na dresu": 4,
+                                            "Uni/HS/Klub": "Memphis"
+                                        },
+                                        {
+                                            "Ime": "Julius",
+                                            "Prezime": "Randle",
+                                            "Pozicija": "PF",
+                                            "Broj na dresu": 30,
+                                            "Uni/HS/Klub": "Kentucky"
+                                        }
+                                    ]
+                                ],
+                                "additionalItems": true,
+                                "items": {
+                                    "$id": "#/properties/Klubovi/items/anyOf/0/properties/Igraci/items",
+                                    "anyOf": [
+                                        {
+                                            "$id": "#/properties/Klubovi/items/anyOf/0/properties/Igraci/items/anyOf/0",
+                                            "type": "object",
+                                            "title": "The first anyOf schema",
+                                            "description": "An explanation about the purpose of this instance.",
+                                            "default": {},
+                                            "examples": [
+                                                {
+                                                    "Ime": "Derrick",
+                                                    "Prezime": "Rose",
+                                                    "Pozicija": "PG",
+                                                    "Broj na dresu": 4,
+                                                    "Uni/HS/Klub": "Memphis"
+                                                }
+                                            ],
+                                            "required": [
+                                                "Ime",
+                                                "Prezime",
+                                                "Pozicija",
+                                                "Broj na dresu",
+                                                "Uni/HS/Klub"
+                                            ],
+                                            "properties": {
+                                                "Ime": {
+                                                    "$id": "#/properties/Klubovi/items/anyOf/0/properties/Igraci/items/anyOf/0/properties/Ime",
+                                                    "type": "string",
+                                                    "title": "The Ime schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "Derrick"
+                                                    ]
+                                                },
+                                                "Prezime": {
+                                                    "$id": "#/properties/Klubovi/items/anyOf/0/properties/Igraci/items/anyOf/0/properties/Prezime",
+                                                    "type": "string",
+                                                    "title": "The Prezime schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "Rose"
+                                                    ]
+                                                },
+                                                "Pozicija": {
+                                                    "$id": "#/properties/Klubovi/items/anyOf/0/properties/Igraci/items/anyOf/0/properties/Pozicija",
+                                                    "type": "string",
+                                                    "title": "The Pozicija schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "PG"
+                                                    ]
+                                                },
+                                                "Broj na dresu": {
+                                                    "$id": "#/properties/Klubovi/items/anyOf/0/properties/Igraci/items/anyOf/0/properties/Broj%20na%20dresu",
+                                                    "type": "integer",
+                                                    "title": "The Broj na dresu schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": 0,
+                                                    "examples": [
+                                                        4
+                                                    ]
+                                                },
+                                                "Uni/HS/Klub": {
+                                                    "$id": "#/properties/Klubovi/items/anyOf/0/properties/Igraci/items/anyOf/0/properties/Uni/HS/Klub",
+                                                    "type": "string",
+                                                    "title": "The Uni/HS/Klub schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "Memphis"
+                                                    ]
+                                                }
+                                            },
+                                            "additionalProperties": true
+                                        }
+                                    ]
+                                }
+                            },
+                            "Trener": {
+                                "$id": "#/properties/Klubovi/items/anyOf/0/properties/Trener",
+                                "type": "array",
+                                "title": "The Trener schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": [],
+                                "examples": [
+                                    [
+                                        {
+                                            "Ime": "Tom",
+                                            "Prezime": "Thibodeau"
+                                        }
+                                    ]
+                                ],
+                                "additionalItems": true,
+                                "items": {
+                                    "$id": "#/properties/Klubovi/items/anyOf/0/properties/Trener/items",
+                                    "anyOf": [
+                                        {
+                                            "$id": "#/properties/Klubovi/items/anyOf/0/properties/Trener/items/anyOf/0",
+                                            "type": "object",
+                                            "title": "The first anyOf schema",
+                                            "description": "An explanation about the purpose of this instance.",
+                                            "default": {},
+                                            "examples": [
+                                                {
+                                                    "Ime": "Tom",
+                                                    "Prezime": "Thibodeau"
+                                                }
+                                            ],
+                                            "required": [
+                                                "Ime",
+                                                "Prezime"
+                                            ],
+                                            "properties": {
+                                                "Ime": {
+                                                    "$id": "#/properties/Klubovi/items/anyOf/0/properties/Trener/items/anyOf/0/properties/Ime",
+                                                    "type": "string",
+                                                    "title": "The Ime schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "Tom"
+                                                    ]
+                                                },
+                                                "Prezime": {
+                                                    "$id": "#/properties/Klubovi/items/anyOf/0/properties/Trener/items/anyOf/0/properties/Prezime",
+                                                    "type": "string",
+                                                    "title": "The Prezime schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "Thibodeau"
+                                                    ]
+                                                }
+                                            },
+                                            "additionalProperties": true
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        }
+    },
+    "additionalProperties": true
+}

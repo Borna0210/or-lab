@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Košarkaški klubovi</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="description" content="Popis 15 košarkaških klubova koji sadrži i 3 igrača te trenera svakog kluba">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Borna Radojčić">
+<meta name="keywords" content="Basketball, košarka, klubovi, klub, igrač, trener, NBA">
+<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/921/921234.png" type="image/png">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Montserrat", sans-serif
+    }
+
+    .w3-row-padding img {
+        margin-bottom: 12px
+    }
+
+    .w3-sidebar {
+        width: 120px;
+        background: #222;
+    }
+
+    #main {
+        margin-left: 120px
+    }
+
+    @media only screen and (max-width: 600px) {
+        #main {
+            margin-left: 0
+        }
+    }
+</style>
+
+
+
+
+
+</head>
+
+<body class="w3-black">
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+        <a href="/" class="w3-bar-item w3-button w3-padding-large w3-black">
+            <i class="fa fa-home w3-xxlarge"></i>
+            <p>HOME</p>
+        </a>
+        <a href="/db" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-database w3-xxlarge"></i>
+            <p>DATABASE</p>
+        </a>
+    </nav>
+
+    <div class="w3-padding-large" id="main">
+        <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+            <h1 class="w3-jumbo">Košarkaški klubovi</h1>
+            <h5>Ovdje možete saznati sve što vas zanima o tablicama u mojoj bazi podataka i informacijama koje su u
+                njima
+                zapisane</h5>
+        </header>
+
+
+        <div class="w3-content w3-justify w3-text-grey w3-padding-10" id="klub">
+            <h2 class="w3-text-white">Klub</h2>
+            <hr style="width:200px" class="w3-opacity">
+            <h5 class="w3-text-light-grey">Popis 15 klubova u NBA-u, informacije koje imamo o njima su njihovo ime, ime
+                njihove arene, godina njihovog osnutka, savezna država u kojoj igraju i jedinstveni identifikacijski
+                broj svakog kluba.
+            </h5>
+        </div>
+        <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="igrac">
+            <h2 class="w3-text-white">Igrač</h2>
+            <hr style="width:200px" class="w3-opacity">
+            <h5 class="w3-text-light-grey">Popis 3 igrača iz svakog od 15 klubova, podaci koje imamo o njima su njihovo
+                ime,
+                prezime, pozicija na kojoj igraju, broj na njihovom dresu i sveučilište za koje su igrali, ako nisu
+                igrali za sveučilište onda piše ime srednje škole ili kluba iz kojeg su došli u NBA.
+            </h5>
+        </div>
+        <div class="w3-content w3-justify w3-text-grey w3-padding-10" id="trener">
+            <h2 class="w3-text-white">Trener</h2>
+            <hr style="width:200px" class="w3-opacity">
+            <h5 class="w3-text-light-grey">Popis trenera svih 15 klubova s popisa, informacije koje imamo o njima su
+                njihovo
+                ime i prezime.
+            </h5>
+        </div>
+        <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="tablica">
+            <h2 class="w3-text-white">Košarkaški_klubovi</h2>
+            <hr style="width:200px" class="w3-opacity">
+            <h5 class="w3-text-light-grey">Konačna tablica u kojoj imamo popis klubova s pripadajućim igračima i
+                trenerom, povezani su atributom identifikacijskog broja kluba,
+                nje nema u bazi podataka već je dobivena prirodnim spajanjem tri prethodne tablice i tako je zapisana u
+                CSV i JSON datoteci.
+            </h5>
+        </div>
+        <hr>
+        <div class="w3-content w3-justify w3-text-grey w3-padding-10" id="preuzimanja">
+            <h3 class="w3-text-white">Pregledi</h3>
+            <hr style="width:200px">
+            <h5 class="w3-text-light-grey">Ovdje možete pregledati moju bazu u obliku CSV ili JSON datoteke
+            </h5>
+        </div>
+        <div class="w3-content w3-justify w3-text-grey w3-padding-10" id="files">
+            <a href="https://raw.githubusercontent.com/Borna0210/or-lab/master/kosarkaski_klubovi.csv"
+                class="w3-bar-item w3-button w3-padding-large w3-black" target="_blank">
+                <i class="fas fa-file-csv w3-xxlarge"></i>
+                <p>CSV</p>
+            </a>
+            <a href="https://raw.githubusercontent.com/Borna0210/or-lab/master/kosarkaski_klubovi.json"
+                class="w3-bar-item w3-button w3-padding-large w3-black" target="_blank">
+                <i class="fab fa-js-square w3-xxlarge"></i>
+                <p>JSON</p>
+            </a>
+
+        </div>
+    </div>
+</body>
+
+</html>

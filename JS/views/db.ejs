@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Baza podataka</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="description" content="Popis 15 košarkaških klubova koji sadrži i 3 igrača te trenera svakog kluba">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Borna Radojčić">
+    <meta name="keywords" content="Basketball, košarka, klubovi, klub, igrač, trener, NBA">
+    <link rel="icon"
+        href="https://cdn-icons.flaticon.com/png/512/657/premium/657695.png?token=exp=1636589739~hmac=6906a3060934ca3b3f5d68187e8ab6f1"
+        type="image/png">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Montserrat", sans-serif
+        }
+
+        .w3-row-padding img {
+            margin-bottom: 12px
+        }
+
+        .w3-sidebar {
+            width: 120px;
+            background: #222;
+        }
+
+        #main {
+            margin-left: 120px
+        }
+
+        @media only screen and (max-width: 600px) {
+            #main {
+                margin-left: 0
+            }
+        }
+
+        input:focus {
+            outline: none !important;
+            border-color: white;
+            box-shadow: 0 0 10px white;
+        }
+    </style>
+<script type="text/javascript">
+
+</script>
+
+
+
+</head>
+
+<body class="w3-black">
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+        <a href="/" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-home w3-xxlarge"></i>
+            <p>HOME</p>
+        </a>
+        <a href="/db" class="w3-bar-item w3-button w3-padding-large w3-black">
+            <i class="fa fa-database w3-xxlarge"></i>
+            <p>DATABASE</p>
+        </a>
+    </nav>
+
+    <div class="w3-padding-large" id="main">
+        <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+            <h1 class="w3-jumbo">Baza podataka</h1>
+            <h5>Ovdje možete vidjeti moju bazu podataka u obliku tablice, filtrirati po njoj kako god želite i
+                pregledati te podatke u CSV ili JSON obliku</h5>
+        </header>
+    </div>
+
+    <div>
+        <form method="post" id="forma">
+            <fieldset style="margin:0px 0px 0px 250px; width: 80.6%">
+                <legend></legend>
+                <label for="search" style="font-weight: bold">Polje za pretragu</label><br>
+                <input type="text" id="search" name="fname" placeholder="Unesite vrijednost"
+                    style="margin-top: 5px; margin-bottom: 20px;"><br>
+                <label for="searchdrop" style="font-weight: bold">Odaberite po kojem atributu tablice
+                    pretražujete</label><br>
+                <select required id="searchdrop" name="dropdown" style="margin-top: 2px">
+                    <option value="" selected hidden>Odaberite atribut za pretragu</option>
+                    <option value="svi">Svi atributi (Wildcard)</option>
+                    <option value="idklub">idklub</option>
+                    <option value="imeklub">imeklub</option>
+                    <option value="arenaklub">arenaklub</option>
+                    <option value="savdrzava">savdrzava</option>
+                    <option value="godosnutka">godosnutka</option>
+                    <option value="imeigrac">imeigrac</option>
+                    <option value="prezimeigrac">prezimeigrac</option>
+                    <option value="brojdresa">brojdresa</option>
+                    <option value="pozicijaigrac">pozicijaigrac</option>
+                    <option value="uni_hs_club">uni_hs_club</option>
+                    <option value="imetrener">imetrener</option>
+                    <option value="prezimetrener">prezimetrener</option>
+                </select><br>
+                <input type="submit" id="submit" value="Pretraži" style="font-weight: bold; margin-top: 370px" >
+            </fieldset>
+        </form>
+
+        <div class="row">
+
+            <table border="1" style="margin-left:250px; width: 80.6%; ">
+
+                <tr>
+                    <th>idklub</th>
+                    <th>imeklub</th>
+                    <th>arenaklub</th>
+                    <th>savdrzava</th>
+                    <th>godosnutka</th>
+                    <th>imeigrac</th>
+                    <th>prezimeigrac</th>
+                    <th>brojdresa</th>
+                    <th>pozicijaigrac</th>
+                    <th>uni_hs_club</th>
+                    <th>imetrener</th>
+                    <th>prezimetrener</th>
+                </tr>
+
+                <tbody id="datatable">
+                    <% if(data.length> 0){ %>
+
+                        <% for ( var i=0 ; i < data.length ; i++){ %>
+                            <tr>
+                                <td id="idklub">
+                                    <%= data[i].idklub%>
+                                </td>
+                                <td id="imeklub">
+                                    <%= data[i].imeklub%>
+                                </td>
+                                <td id="arenaklub">
+                                    <%= data[i].arenaklub%>
+                                </td>
+                                <td id="savdrzava">
+                                    <%= data[i].savdrzava%>
+                                </td>
+                                <td id="godosnutka">
+                                    <%= data[i].godosnutka%>
+                                </td>
+                                <td id="imeigrac">
+                                    <%= data[i].imeigrac%>
+                                </td>
+                                <td id="prezimeigrac">
+                                    <%= data[i].prezimeigrac%>
+                                </td>
+                                <td id="brojdresa">
+                                    <%= data[i].brojdresa%>
+                                </td>
+                                <td id="pozicijaigrac">
+                                    <%= data[i].pozicijaigrac%>
+                                </td>
+                                <td id="uni_hs_club">
+                                    <%= data[i].uni_hs_club%>
+                                </td>
+                                <td id="imetrener">
+                                    <%= data[i].imetrener%>
+                                </td>
+                                <td id="prezimetrener">
+                                    <%= data[i].prezimetrener%>
+                                
+                                </td>
+                            </tr>
+                            <% } %>
+
+                                <% } %>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    
+    <div class=" w3-text-grey " id="preuzimanja" style="margin-left:250px; margin-top: 30px;">
+        <h3 class="w3-text-white">Pregledi</h3>
+        <hr style="width:200px">
+        <h5 class="w3-text-light-grey">Ovdje možete preuzeti moju filtriranu bazu u obliku CSV ili JSON datoteke
+        </h5>
+    </div>
+    <div class="  w3-text-grey" id="files" style="margin-left:240px">
+        <a href="/views/kosarkaski_klubovi.csv" download
+            class="w3-bar-item w3-button w3-padding-large w3-black" target="_blank">
+            <i class="fas fa-file-csv w3-xxlarge"></i>
+            <p>CSV</p>
+        </a>
+        <a href="/views/kosarkaski_klubovi.json" download
+            class="w3-bar-item w3-button w3-padding-large w3-black" target="_blank">
+            <i class="fab fa-js-square w3-xxlarge"></i>
+            <p>JSON</p>
+        </a>
+
+    </div>
+
+
+
+</body>
+
+</html>

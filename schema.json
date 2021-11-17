@@ -1,9 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "http://example.com/example.json",
+    "$id": "localhost:3000/kosarkaski_klubovi.json",
     "type": "object",
-    "title": "The root schema",
-    "description": "The root schema comprises the entire JSON document.",
+    "title": "Košarkaški klubovi",
+    "description": "Košarkaški klubovi, pripadni igrači i treneri.",
     "default": {},
     "examples": [
         {
@@ -551,15 +551,13 @@
             ]
         }
     ],
-    "required": [
-        "Klubovi"
-    ],
+  
     "properties": {
         "Klubovi": {
             "$id": "#/properties/Klubovi",
             "type": "array",
             "title": "The Klubovi schema",
-            "description": "An explanation about the purpose of this instance.",
+            "description": "Podaci o igračima i klubovima",
             "default": [],
             "examples": [
                 [
@@ -645,7 +643,7 @@
                         "$id": "#/properties/Klubovi/items/anyOf/0",
                         "type": "object",
                         "title": "The first anyOf schema",
-                        "description": "An explanation about the purpose of this instance.",
+                        "description": "Popis svih igrača i trenera kluba",
                         "default": {},
                         "examples": [
                             {
@@ -699,7 +697,7 @@
                                 "$id": "#/properties/Klubovi/items/anyOf/0/properties/Ime%20kluba",
                                 "type": "string",
                                 "title": "The Ime kluba schema",
-                                "description": "An explanation about the purpose of this instance.",
+                                "description": "Ime kluba.",
                                 "default": "",
                                 "examples": [
                                     "New York Knicks"
@@ -709,7 +707,7 @@
                                 "$id": "#/properties/Klubovi/items/anyOf/0/properties/Arena%20kluba",
                                 "type": "string",
                                 "title": "The Arena kluba schema",
-                                "description": "An explanation about the purpose of this instance.",
+                                "description": "Arena kluba",
                                 "default": "",
                                 "examples": [
                                     "Madison Square Garden"
@@ -719,7 +717,7 @@
                                 "$id": "#/properties/Klubovi/items/anyOf/0/properties/Savezna%20drzava%20kluba",
                                 "type": "string",
                                 "title": "The Savezna drzava kluba schema",
-                                "description": "An explanation about the purpose of this instance.",
+                                "description": "Savezna država kluba",
                                 "default": "",
                                 "examples": [
                                     "New York"
@@ -729,7 +727,7 @@
                                 "$id": "#/properties/Klubovi/items/anyOf/0/properties/Godina%20osnutka%20kluba",
                                 "type": "integer",
                                 "title": "The Godina osnutka kluba schema",
-                                "description": "An explanation about the purpose of this instance.",
+                                "description": "Godina osnutka kluba",
                                 "default": 0,
                                 "examples": [
                                     1946
@@ -739,7 +737,7 @@
                                 "$id": "#/properties/Klubovi/items/anyOf/0/properties/ID%20kluba",
                                 "type": "integer",
                                 "title": "The ID kluba schema",
-                                "description": "An explanation about the purpose of this instance.",
+                                "description": "ID kluba",
                                 "default": 0,
                                 "examples": [
                                     1
@@ -749,7 +747,7 @@
                                 "$id": "#/properties/Klubovi/items/anyOf/0/properties/Igraci",
                                 "type": "array",
                                 "title": "The Igraci schema",
-                                "description": "An explanation about the purpose of this instance.",
+                                "description": "Popis igrača kluba",
                                 "default": [],
                                 "examples": [
                                     [
@@ -776,8 +774,8 @@
                                         {
                                             "$id": "#/properties/Klubovi/items/anyOf/0/properties/Igraci/items/anyOf/0",
                                             "type": "object",
-                                            "title": "The first anyOf schema",
-                                            "description": "An explanation about the purpose of this instance.",
+                                            "title": "The first anyOf player schema",
+                                            "description": "Atributi igrača.",
                                             "default": {},
                                             "examples": [
                                                 {
@@ -799,8 +797,8 @@
                                                 "Ime": {
                                                     "$id": "#/properties/Klubovi/items/anyOf/0/properties/Igraci/items/anyOf/0/properties/Ime",
                                                     "type": "string",
-                                                    "title": "The Ime schema",
-                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "title": "The Ime igrač schema",
+                                                    "description": "Ime igrača.",
                                                     "default": "",
                                                     "examples": [
                                                         "Derrick"
@@ -809,8 +807,8 @@
                                                 "Prezime": {
                                                     "$id": "#/properties/Klubovi/items/anyOf/0/properties/Igraci/items/anyOf/0/properties/Prezime",
                                                     "type": "string",
-                                                    "title": "The Prezime schema",
-                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "title": "The Prezime igrač schema",
+                                                    "description": "Prezime igrača.",
                                                     "default": "",
                                                     "examples": [
                                                         "Rose"
@@ -820,7 +818,7 @@
                                                     "$id": "#/properties/Klubovi/items/anyOf/0/properties/Igraci/items/anyOf/0/properties/Pozicija",
                                                     "type": "string",
                                                     "title": "The Pozicija schema",
-                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "description": "Pozicija igrača.",
                                                     "default": "",
                                                     "examples": [
                                                         "PG"
@@ -830,7 +828,7 @@
                                                     "$id": "#/properties/Klubovi/items/anyOf/0/properties/Igraci/items/anyOf/0/properties/Broj%20na%20dresu",
                                                     "type": "integer",
                                                     "title": "The Broj na dresu schema",
-                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "description": "Broj na dresu igrača.",
                                                     "default": 0,
                                                     "examples": [
                                                         4
@@ -840,7 +838,7 @@
                                                     "$id": "#/properties/Klubovi/items/anyOf/0/properties/Igraci/items/anyOf/0/properties/Uni/HS/Klub",
                                                     "type": "string",
                                                     "title": "The Uni/HS/Klub schema",
-                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "description": "Srednja škola, sveučilište ili klub gdje je igrač bio prije NBA",
                                                     "default": "",
                                                     "examples": [
                                                         "Memphis"
@@ -856,7 +854,7 @@
                                 "$id": "#/properties/Klubovi/items/anyOf/0/properties/Trener",
                                 "type": "array",
                                 "title": "The Trener schema",
-                                "description": "An explanation about the purpose of this instance.",
+                                "description": "Trener kluba",
                                 "default": [],
                                 "examples": [
                                     [
@@ -873,8 +871,8 @@
                                         {
                                             "$id": "#/properties/Klubovi/items/anyOf/0/properties/Trener/items/anyOf/0",
                                             "type": "object",
-                                            "title": "The first anyOf schema",
-                                            "description": "An explanation about the purpose of this instance.",
+                                            "title": "The first anyOf coach schema",
+                                            "description": "Trener kluba i njegovi atributi",
                                             "default": {},
                                             "examples": [
                                                 {
@@ -891,7 +889,7 @@
                                                     "$id": "#/properties/Klubovi/items/anyOf/0/properties/Trener/items/anyOf/0/properties/Ime",
                                                     "type": "string",
                                                     "title": "The Ime schema",
-                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "description": "Ime trenera",
                                                     "default": "",
                                                     "examples": [
                                                         "Tom"
@@ -901,7 +899,7 @@
                                                     "$id": "#/properties/Klubovi/items/anyOf/0/properties/Trener/items/anyOf/0/properties/Prezime",
                                                     "type": "string",
                                                     "title": "The Prezime schema",
-                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "description": "Prezime trenera",
                                                     "default": "",
                                                     "examples": [
                                                         "Thibodeau"

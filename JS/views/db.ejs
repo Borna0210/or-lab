@@ -53,11 +53,149 @@
             box-shadow: 0 0 10px white;
         }
     </style>
-<script type="text/javascript">
 
-</script>
+    <script type="text/javascript">
+        function filtriraj() {
+            $(document).ready(function () {
+
+                $('form').on('submit', function (e) {
+                    // validation code here
+                    e.preventDefault();
+                    var input, filter, table, tr, td, i;
+                    input = document.getElementById("search");
+                    filter = input.value.toUpperCase();
+                    table = document.getElementById("datatable");
+                    var rows = table.getElementsByTagName("tr");
+                    var choice = document.getElementById("searchdrop").value;
+                    csv = [];
+                    csv.push("idklub,imeklub,arenaklub,savdrzava,godosnutka,imeigrac,prezimeigrac,brojdresa,pozicijaigrac,uni_hs_club,imetrener,prezimetrener");
+                    for (i = 0; i < rows.length; i++) {
+                        var cells = rows[i].getElementsByTagName("td");
+                        var j;
+                        var rowContainsFilter = false;
+                        csv_row = [];
+
+                        for (j = 0; j < cells.length; j++) {
+                            if (cells[j]) {
+                                if ((choice == "idklub" && j == 0) || (choice == "imeklub" && j == 1) || (choice == "arenaklub" && j == 2) || (choice == "savdrzava" && j == 3) || (choice == "godosnutka" && j == 4) || (choice == "imeigrac" && j == 5) || (choice == "prezimeigrac" && j == 6) || (choice == "brojdresa" && j == 7) || (choice == "pozicijaigrac" && j == 8) || (choice == "uni_hs_club" && j == 9) || (choice == "imetrener" && j == 10) || (choice == "prezimetrener" && j == 11) || choice == "svi") {
+                                    if (cells[j].innerHTML.toUpperCase().indexOf(filter.trim()) > -1 && cells[j].innerText.trim().length == filter.trim().length) {
+                                        rowContainsFilter = true;
+                                        for (z = 0; z < cells.length; z++) {
+                                            txt = cells[z].innerText;
+                                            csv_row.push(txt.replace(",", "-"));
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+                        if (rowContainsFilter) {
+                            csv.push(csv_row.join(","));
+                            output = csv.join("\n")
+                        }
 
 
+                        if (!rowContainsFilter) {
+                            rows[i].style.display = "none";
+                        } else {
+                            rows[i].style.display = "";
+
+                        }
+                    }
+
+
+
+                });
+
+
+            });
+
+
+        }
+        function csvbtn() {
+            if (typeof output !== 'undefined') {
+                var hiddenElement = document.createElement('a');
+                hiddenElement.href = 'data:attachment/csv,' + encodeURI(output);
+                hiddenElement.target = '_blank';
+                hiddenElement.download = 'kosarkaski_klubovi.csv';
+                hiddenElement.click();
+            } else {
+                table = document.getElementById("datatable");
+                var rows = table.getElementsByTagName("tr");
+
+                csv = [];
+                csv.push("idklub,imeklub,arenaklub,savdrzava,godosnutka,imeigrac,prezimeigrac,brojdresa,pozicijaigrac,uni_hs_club,imetrener,prezimetrener");
+                for (i = 0; i < rows.length; i++) {
+                    var cells = rows[i].getElementsByTagName("td");
+                    var j;
+                    var rowContainsFilter = false;
+                    csv_row = [];
+                    for (j = 0; j < cells.length; j++) {
+                        txt = cells[j].innerText;
+                        csv_row.push(txt.replace(",", "-"));
+                    } csv.push(csv_row.join(","));
+                    output = csv.join("\n")
+                }
+                var hiddenElement = document.createElement('a');
+                hiddenElement.href = 'data:attachment/csv,' + encodeURI(output);
+                hiddenElement.target = '_blank';
+                hiddenElement.download = 'kosarkaski_klubovi.csv';
+                hiddenElement.click()
+
+            }
+        }
+
+        function jsonbtn() {
+            if (typeof output === 'undefined') {
+                table = document.getElementById("datatable");
+                var rows = table.getElementsByTagName("tr");
+
+                csv = [];
+                csv.push("idklub,imeklub,arenaklub,savdrzava,godosnutka,imeigrac,prezimeigrac,brojdresa,pozicijaigrac,uni_hs_club,imetrener,prezimetrener");
+                for (i = 0; i < rows.length; i++) {
+                    var cells = rows[i].getElementsByTagName("td");
+                    var j;
+                    var rowContainsFilter = false;
+                    csv_row = [];
+                    for (j = 0; j < cells.length; j++) {
+                        txt = cells[j].innerText;
+                        csv_row.push(txt.replace(",", "-"));
+                    } csv.push(csv_row.join(","));
+                    output = csv.join("\n")
+                }
+              
+
+            }
+
+            var lines = output.split("\n");
+
+            var result = [];
+            var headers = lines[0].split(",");
+
+            for (var i = 1; i < lines.length; i++) {
+
+                var obj = {};
+                var currentline = lines[i].split(",");
+
+                for (var j = 0; j < headers.length; j++) {
+                    obj[headers[j]] = currentline[j];
+                }
+                result.push(obj);
+            }
+           var hiddenElement = document.createElement('a');
+                hiddenElement.href = 'data:attachment/json,' + encodeURI(JSON.stringify(result));
+                hiddenElement.target = '_blank';
+                hiddenElement.download = 'kosarkaski_klubovi.json';
+                hiddenElement.click()
+        }
+
+
+
+
+    </script>
+
+
+    <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
 
 </head>
 
@@ -82,7 +220,7 @@
     </div>
 
     <div>
-        <form method="post" id="forma">
+        <form method="post">
             <fieldset style="margin:0px 0px 0px 250px; width: 80.6%">
                 <legend></legend>
                 <label for="search" style="font-weight: bold">Polje za pretragu</label><br>
@@ -106,7 +244,8 @@
                     <option value="imetrener">imetrener</option>
                     <option value="prezimetrener">prezimetrener</option>
                 </select><br>
-                <input type="submit" id="submit" value="Pretraži" style="font-weight: bold; margin-top: 370px" >
+                <input type="submit" id="submit" value="Pretraži" style="font-weight: bold; margin-top: 370px"
+                    onclick="filtriraj()">
             </fieldset>
         </form>
 
@@ -169,7 +308,6 @@
                                 </td>
                                 <td id="prezimetrener">
                                     <%= data[i].prezimetrener%>
-                                
                                 </td>
                             </tr>
                             <% } %>
@@ -177,27 +315,24 @@
                                 <% } %>
                 </tbody>
             </table>
-
         </div>
     </div>
-    
+
     <div class=" w3-text-grey " id="preuzimanja" style="margin-left:250px; margin-top: 30px;">
-        <h3 class="w3-text-white">Pregledi</h3>
+        <h3 class="w3-text-white">Preuzimanja</h3>
         <hr style="width:200px">
         <h5 class="w3-text-light-grey">Ovdje možete preuzeti moju filtriranu bazu u obliku CSV ili JSON datoteke
         </h5>
     </div>
     <div class="  w3-text-grey" id="files" style="margin-left:240px">
-        <a href="/views/kosarkaski_klubovi.csv" download
-            class="w3-bar-item w3-button w3-padding-large w3-black" target="_blank">
+        <button id="csv" onclick="csvbtn()" class="w3-bar-item w3-button w3-padding-large w3-black">
             <i class="fas fa-file-csv w3-xxlarge"></i>
             <p>CSV</p>
-        </a>
-        <a href="/views/kosarkaski_klubovi.json" download
-            class="w3-bar-item w3-button w3-padding-large w3-black" target="_blank">
+        </button>
+        <button id="json" onclick="jsonbtn()" class="w3-bar-item w3-button w3-padding-large w3-black">
             <i class="fab fa-js-square w3-xxlarge"></i>
             <p>JSON</p>
-        </a>
+        </button>
 
     </div>
 

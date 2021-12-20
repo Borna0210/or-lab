@@ -5,6 +5,7 @@ const pool = new Pool({
     host: 'localhost',
     database: 'LAB_OR',
     password: 'bazepodataka',
+    multipleStatements: true,
     port: 5433,
 });
 

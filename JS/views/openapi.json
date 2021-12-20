@@ -1,0 +1,606 @@
+{
+    
+    "openapi": "3.0.3",
+    "info": {
+        "version": "3.0",
+        "title":"Kosarkaski klubovi",
+        "description": "Košarkaški klubovi iz NBA lige s 3 pripadna igrača i trenerom ",
+        "contact": {
+            "name": "Borna Radojčić",
+            "email": "br52543@fer.hr"
+        },
+        "license": {
+            "name": "CC BY-NC-SA 4.0",
+            "url": "https://github.com/Borna0210/or-lab/blob/master/LICENSE"
+                }
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000",
+            "description": "Razvojni server"
+        }
+    ],
+    "paths": {
+        "/kosarka": {
+            "get": {
+                "summary": "Dohvaćanje svih košarkaških klubova s pripadnim igračima i trenerom",
+                "description": "Vraća prirodno spojene tablice iz baze (klub, igrac i trener)",
+                "responses": {
+                    "200": {
+                        "description": "Fetched all data from DB",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "type":"array",
+                                    "$ref": "#/components/schemas/kosarka",
+                                    "example":"localhost:3000/kosarka"
+                                }
+                            }
+                        }
+                        
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                }
+            }
+        },
+        "/kosarka/{idklub}":{
+            "parameters": [
+                {
+                    "in": "path",
+                    "description": "id kluba",
+                    "name":"idklub",
+                    "schema":{
+                        "type": "integer"
+                    },
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Dohvaćanje svih košarkaških klubova s pripadnim igračima i trenerom",
+                "description": "Vraća prirodno spojene tablice iz baze (klub, igrac, trener) gdje je idklub=${id}",
+                "responses": {
+                    "200": {
+                        "description": "Fetched all data from DB requested by id",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "type":"array",
+                                    "$ref":"#/components/schemas/kosarka",
+                                    "example":"localhost:3000/kosarka/1"
+                                }
+                            }
+                        }
+                        
+                    },
+                    "404": {
+                        "description": "Requested item was not found in the DB"
+                    }
+                }
+
+            }
+        },
+        "/igrac/{idklub}/{brojdres}":{
+            "parameters": [
+                {
+                    "in": "path",
+                    "description": "id kluba",
+                    "name":"idklub",
+                    "schema":{
+                        "type": "integer"
+                    },
+                    "required": true
+                },
+                {
+                    "in": "path",
+                    "description": "broj dresa",
+                    "name": "brojdres",
+                    "schema":{
+                        "type": "integer"
+                    },
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Dohvaćanje informacija o igračima",
+                "description": "Vraća igrača iz određenog kluba, klub se odredi po idkluba, a igrač po broju dresa (brdres)",
+                "responses": {
+                    "200": {
+                        "description": "Fetched requested player by id and jersey number",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "type":"array",
+                                    "$ref":"#/components/schemas/igrac",
+                                    "example":"localhost:3000/igrac/2/23"
+                                }
+                            }
+                        }
+                        
+                    },
+                    "404": {
+                        "description": "Requested item was not found in the DB"
+                    }
+                }
+
+            }
+
+        },
+        "/igrac/{pozicijaigrac}":{
+            "parameters": [
+                {
+                    "in": "path",
+                    "description": "Dohvaćanje svih igrača koji igraju na određenoj poziciji",
+                    "name":"pozicijaigrac",
+                    "schema":{
+                        "type": "string"
+                    },
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Dohvaćanje informacija o igračima",
+                "description": "Vraća sve informacije o igračima koji igraju određenu poziciju",
+                "responses": {
+                    "200": {
+                        "description": "Fetched requested player",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "type":"array",
+                                    "$ref":"#/components/schemas/igrac",
+                                    "example":"localhost:3000/igrac/PG"
+                                }
+                            }
+                        }
+                        
+                    },
+                    "404": {
+                        "description": "Requested item was not found in the DB"
+                    }
+                }
+
+            }
+
+        },
+        "/trener/{idklub}":{
+            "parameters": [
+                {
+                    "in": "path",
+                    "description": "Dohvaćanje trenera kluba preko idkluba",
+                    "name":"idklub",
+                    "schema":{
+                        "type": "integer"
+                    },
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Dohvaćanje informacija o treneru kluba",
+                "description": "Vraća sve informacije o treneru kluba uz pomoć idkluba",
+                "responses": {
+                    "200": {
+                        "description": "Fetched requested coach",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "type":"array",
+                                    "$ref":"#/components/schemas/trener",
+                                    "example":"localhost:3000/trener/2"
+                                }
+                            }
+                        }
+                        
+                    },
+                    "404": {
+                        "description": "Requested item was not found in the DB"
+                    }
+                }
+
+            }
+
+        },
+        "/klub/{idklub}":{
+            "parameters": [
+                {
+                    "in": "path",
+                    "description": "Dohvaćanje informacija o klubovima preko idkluba",
+                    "name":"idklub",
+                    "schema":{
+                        "type": "integer"
+                    },
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Dohvaćanje informacija o klubovima",
+                "description": "Vraća sve informacije o klubu uz pomoć idkluba",
+                "responses": {
+                    "200": {
+                        "description": "Fetched requested club",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "type":"array",
+                                    "$ref":"#/components/schemas/klub",
+                                    "example":"localhost:3000/klub/2"
+                                }
+                            }
+                        }
+                        
+                    },
+                    "404": {
+                        "description": "Requested item was not found in the DB"
+                    }
+                }
+
+            }
+
+        },
+        "/add":{
+            "post": {
+                "summary": "Novi unos u bazu podataka",
+                "description": "Ubacuje novi klub, pripadnog igrača i trenera u bazu podataka",
+                "requestBody":{
+                    "description": "Sve informacije o klubu, igračima i treneru za dodati u bazu",
+                    "content": {
+                        "application/json":{
+                            "schema":{
+                                "$ref":"#/components/schemas/kosarka"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "DB value is now added"
+                    },
+                    "400": {
+                        "description": "You haven't listed all values or you are trying to put a player in a squad with the jersey number that another player has"
+                    }
+                }
+            }
+        },
+        "/modify/{idklub}/{brojdres}":{
+            "parameters": [
+                {
+                    "in": "path",
+                    "description": "Dohvaćanje informacija o klubovima preko idkluba i ažuriranje istih",
+                    "name":"idklub",
+                    "schema":{
+                        "type": "integer"
+                    },
+                    "required": true
+                },
+                {
+                    "in": "path",
+                    "description": "broj dresa",
+                    "name": "brojdres",
+                    "schema":{
+                        "type": "integer"
+                    },
+                    "required": true
+                }
+            ],
+            "put":{
+                "summary": "Ažuriranje informacija u bazi",
+                "description": "Ažuriranje informacija o klubu, igraču ili treneru, povezana je tako da se trener ne može ažurirati ako sve informacije nisu navedene u igraču, igrač ne može ako nisu sve info o klubu itd.",
+                "requestBody":{
+                    "description": "Sve informacije o klubu, igračima i treneru za modificirati u bazi",
+                    "content": {
+                        "application/json":{
+                            "schema":{
+                                "$ref":"#/components/schemas/kosarka_modify"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "DB value is now fully modified"
+                    },
+                    "400":{
+                        "description": "You haven't listed all the needed values, that can mean that you haven't listed all club values so u can't modify player, or all player values so you can't modify coach and so on"
+                    },
+                    "404":{
+                        "description": "Requested item was not found in the DB"
+                    }
+                }
+            }
+        },
+        "/delete/{idklub}/{brojdres}":{
+            "parameters": [
+                {
+                    "in": "path",
+                    "description": "Brisanje klubova po idkluba",
+                    "name":"idklub",
+                    "schema":{
+                        "type": "integer"
+                    },
+                    "required": true
+                },
+                {
+                    "in": "path",
+                    "description": "broj dresa",
+                    "name": "brojdres",
+                    "schema":{
+                        "type": "integer"
+                    },
+                    "required": true
+                }
+            ],
+            "delete":{
+                "description": "Briše unos u bazi s navedenim idkluba i brojem dresa, ako je samo jedan unos s tim id-em, briše se sve vezano uz njega",
+                "responses": {
+                    "200":{
+                        "description": "DB value is now deleted"
+                    },
+                    "404":{
+                        "description": "Requested item was not found in the DB"
+                    }
+                }
+            }
+
+        },
+        "/openapi":{
+            "get": {
+                "summary": "Dohvaćanje ovog OpenAPI-ja",
+                "description": "Vraća tekst ove OpenAPI dokumentacije",
+                "responses": {
+                    "200": {
+                        "description": "Fetched OpenAPI data",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "type":"array",
+                                    "$ref": "#/components/schemas/openapi",
+                                    "example":"localhost:3000/openapi"
+                                }
+                            }
+                        }
+                        
+                    },
+                    "404": {
+                        "description": "OpenAPI data not found on device"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "kosarka":{
+                "type": "object",
+                "required": [
+                    "idklub",
+                    "imeklub",
+                    "arenaklub",
+                    "savdrzava",
+                    "godosnutka",
+                    "imeigrac",
+                    "prezimeigrac",
+                    "brojdresa",
+                    "pozicijaigrac",
+                    "uni_hs_club",
+                    "imetrener",
+                    "prezimetrener"
+                ],
+                "properties": {
+                    "idklub":{
+                        "type": "integer",
+                        "example":2
+                    },
+                    "imeklub":{
+                        "type": "string",
+                        "example":"Golden State Warriors"
+                    },
+                    "arenaklub":{
+                        "type": "string",
+                        "example":"Chase Center"
+                    },
+                    "savdrzava":{
+                        "type": "string",
+                        "example":"California"
+                    },
+                    "godosnutka":{
+                        "type": "integer",
+                        "example":1946
+                    },
+                    "imeigrac":{
+                        "type": "string",
+                        "example":"Stephen"
+                    },
+                    "prezimeigrac":{
+                        "type": "string",
+                        "example":"Curry"
+                    },
+                    "brojdresa":{
+                        "type": "integer",
+                        "example":30
+                    },
+                    "pozicijaigrac":{
+                        "type": "string",
+                        "example":"PG"
+                    },
+                    "uni_hs_club":{
+                        "type": "string",
+                        "example":"Davidson"
+                    },
+                    "imetrener":{
+                        "type": "string",
+                        "example":"Steve"
+                    },
+                    "prezimetrener":{
+                        "type": "string",
+                        "example":"Kerr"
+                    }
+                }
+            },
+            "igrac":{
+                "type": "object",
+                "required": [
+                    "imeigrac",
+                    "prezimeigrac",
+                    "brojdresa",
+                    "pozicijaigrac",
+                    "uni_hs_club",
+                    "idklub"
+                ],
+                "properties": {
+                    "imeigrac":{
+                        "type": "string",
+                        "example":"Stephen"
+                    },
+                    "prezimeigrac":{
+                        "type": "string",
+                        "example":"Curry"
+                    },
+                    "brojdresa":{
+                        "type": "integer",
+                        "example":30
+                    },
+                    "pozicijaigrac":{
+                        "type": "string",
+                        "example":"PG"
+                    },
+                    "uni_hs_club":{
+                        "type": "string",
+                        "example":"Davidson"
+                    },
+                    "idklub":{
+                        "type": "integer",
+                        "example":2
+                    }
+                }
+            },
+            "trener":{
+                "type": "object",
+                "required": [
+                    "imetrener",
+                    "prezimetrener",
+                    "imeklub",
+                    "idklub"
+                ],
+                "properties": {
+                    "imetrener":{
+                        "type": "string",
+                        "example":"Steve"
+                    },
+                    "prezimetrener":{
+                        "type": "string",
+                        "example":"Kerr"
+                    },
+                    "imeklub":{
+                        "type": "string",
+                        "example":"Golden State Warriors"
+                    },
+                    "idklub":{
+                        "type": "integer",
+                        "example":2
+                    }
+                }
+            },
+            "klub":{
+                "type": "object",
+                "required": [
+                    "idklub",
+                    "imeklub",
+                    "arenaklub",
+                    "savdrzava",
+                    "godosnutka"
+                ],
+                "properties": {
+                    "idklub":{
+                        "type": "integer",
+                        "example":2
+                    },
+                    "imeklub":{
+                        "type": "string",
+                        "example":"Golden State Warriors"
+                    },
+                    "arenaklub":{
+                        "type": "string",
+                        "example":"Chase Center"
+                    },
+                    "savdrzava":{
+                        "type": "string",
+                        "example":"California"
+                    },
+                    "godosnutka":{
+                        "type": "integer",
+                        "example":1946
+                    }
+                }
+            },
+            "kosarka_modify":{
+                "type": "object",
+                "required": [
+                    "idklub",
+                    "imeklub",
+                    "arenaklub",
+                    "savdrzava",
+                    "godosnutka",
+                    "imeigrac",
+                    "prezimeigrac",
+                    "brojdresa",
+                    "pozicijaigrac",
+                    "uni_hs_club",
+                    "imetrener",
+                    "prezimetrener"
+                ],
+                "properties": {
+                    "imeklub":{
+                        "type": "string",
+                        "example":"Golden State Warriors"
+                    },
+                    "arenaklub":{
+                        "type": "string",
+                        "example":"Chase Center"
+                    },
+                    "savdrzava":{
+                        "type": "string",
+                        "example":"California"
+                    },
+                    "godosnutka":{
+                        "type": "integer",
+                        "example":1946
+                    },
+                    "imeigrac":{
+                        "type": "string",
+                        "example":"Stephen"
+                    },
+                    "prezimeigrac":{
+                        "type": "string",
+                        "example":"Curry"
+                    },
+                    "brojdresa":{
+                        "type": "integer",
+                        "example":30
+                    },
+                    "pozicijaigrac":{
+                        "type": "string",
+                        "example":"PG"
+                    },
+                    "uni_hs_club":{
+                        "type": "string",
+                        "example":"Davidson"
+                    },
+                    "imetrener":{
+                        "type": "string",
+                        "example":"Steve"
+                    },
+                    "prezimetrener":{
+                        "type": "string",
+                        "example":"Kerr"
+                    }
+                }
+            },
+            "openapi":{
+                "type": "string",
+                "example":"Teško je dati primjer ovoga, ali to je ovaj dokument pa ga možete isprobati"
+           
+            }
+        }
+    }
+}

@@ -43,5 +43,5 @@ Konačna tablica u kojoj imamo popis klubova s pripadajućim igračima i trenero
 
 #Updates:
 
-2. LAB - Db i Index.ejs nalaze se u JS/views folderu, server je u nodejs obliku, nisam uspio implementirati ajax funkcionalnost da filtriram na strani servera i vraćam te podatke nazad bez da mi se osvježava stranica. Nisam bio siguran smije li se filtrirati direktno iz tablice koju dobijemo u HTML-u ili upit mora ići nazad u bazu, ali ostalo mi je da ste govorili ne priznajete ako samo filtriramo tablicu, ako se moglo tako, onda sam izgubio jako puno vremena pokušavajući druge stvari, ali 
-da, to je to
+2. LAB - Db i Index.ejs nalaze se u JS/views folderu, server je u nodejs obliku
+3. LAB - openapi.json je u JS/views folderu

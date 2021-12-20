@@ -1,0 +1,35 @@
+
+//POST  localhost:3000/add
+{
+    "idklub":71,
+    "imeklub":"Orlando Magic",
+    "arenaklub":"Amway Center",
+    "savdrzava":"Florida",
+    "godosnutka":1989,
+    "imeigrac":"Cole",
+    "prezimeigrac":"Anthony",
+    "brojdresa":50,
+    "pozicijaigrac":"PG",
+    "uni_hs_club":"UNC",
+    "imetrener":"Jamahl",
+    "prezimetrener":"Mosley"
+}
+
+//PUT localhost:3000/modify/71/50
+
+{
+    "imeklub":"Orlando Magic",
+    "arenaklub":"Amway Center",
+    "savdrzava":"Florida",
+    "godosnutka":1989,
+    "imeigrac":"Mo",
+    "prezimeigrac":"Bamba",
+    "brojdresa":5,
+    "pozicijaigrac":"C",
+    "uni_hs_club":"Texas",
+    "imetrener":"Jamahl",
+    "prezimetrener":"Mosley"
+}
+
+
+//DELETE localhost:3000/delete/71/5

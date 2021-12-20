@@ -137,6 +137,7 @@ COPY public.klub (idklub, imeklub, arenaklub, savdrzava, godosnutka) FROM stdin;
 13	Atlanta Hawks	State Farm Arena	Georgia	1946
 14	Philadelphia 76ers	Wells Fargo Center	Pennsylvania	1946
 15	Portland Trailblazers	Moda Center	Oregon	1970
+20	Orlando Magic	Amway Center	Florida	1989
 \.
 
 
@@ -160,6 +161,7 @@ Billy	Donovan	4
 Mike	Budenholzer	3
 Steve	Kerr	2
 Tom	Thibodeau	1
+Jamahl	Mosley	20
 \.
 
 
@@ -192,7 +194,7 @@ ALTER TABLE ONLY public.trener
 --
 
 ALTER TABLE ONLY public.igrac
-    ADD CONSTRAINT fkidklubigrac FOREIGN KEY (idklub) REFERENCES public.klub(idklub);
+    ADD CONSTRAINT fkidklubigrac FOREIGN KEY (idklub) REFERENCES public.klub(idklub) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
@@ -200,7 +202,7 @@ ALTER TABLE ONLY public.igrac
 --
 
 ALTER TABLE ONLY public.trener
-    ADD CONSTRAINT fkidklubtrener FOREIGN KEY (idklub) REFERENCES public.klub(idklub);
+    ADD CONSTRAINT fkidklubtrener FOREIGN KEY (idklub) REFERENCES public.klub(idklub) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --

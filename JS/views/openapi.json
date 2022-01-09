@@ -81,6 +81,51 @@
 
             }
         },
+        "/kosarka/{idklub}/{brojdres}":{
+            "parameters": [
+                {
+                    "in": "path",
+                    "description": "id kluba",
+                    "name":"idklub",
+                    "schema":{
+                        "type": "integer"
+                    },
+                    "required": true
+                },
+                {
+                    "in": "path",
+                    "description": "broj dresa",
+                    "name": "brojdres",
+                    "schema":{
+                        "type": "integer"
+                    },
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Dohvaćanje informacija o košarkaškom klubu i jednom pripadnom igraču",
+                "description": "Vraća prirodno spojene tablice iz baze (klub, igrac, trener) gdje je idklub=${id} i brojdres=${brojdres} i sadrži JSON-LD specifikaciju",
+                "responses": {
+                    "200": {
+                        "description": "Fetched all data from DB requested by id",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "type":"array",
+                                    "$ref":"#/components/schemas/kosarka",
+                                    "example":"localhost:3000/kosarka/2/23"
+                                }
+                            }
+                        }
+                        
+                    },
+                    "404": {
+                        "description": "Requested item was not found in the DB"
+                    }
+                }
+
+            }
+        },
         "/igrac/{idklub}/{brojdres}":{
             "parameters": [
                 {
@@ -104,7 +149,7 @@
             ],
             "get": {
                 "summary": "Dohvaćanje informacija o igračima",
-                "description": "Vraća igrača iz određenog kluba, klub se odredi po idkluba, a igrač po broju dresa (brdres)",
+                "description": "Vraća igrača iz određenog kluba, klub se odredi po idkluba, a igrač po broju dresa (brdres) i sadrži JSON-LD specifikaciju",
                 "responses": {
                     "200": {
                         "description": "Fetched requested player by id and jersey number",
@@ -178,7 +223,7 @@
             ],
             "get": {
                 "summary": "Dohvaćanje informacija o treneru kluba",
-                "description": "Vraća sve informacije o treneru kluba uz pomoć idkluba",
+                "description": "Vraća sve informacije o treneru kluba uz pomoć idkluba i sadrži JSON-LD specifikaciju",
                 "responses": {
                     "200": {
                         "description": "Fetched requested coach",
@@ -215,7 +260,7 @@
             ],
             "get": {
                 "summary": "Dohvaćanje informacija o klubovima",
-                "description": "Vraća sve informacije o klubu uz pomoć idkluba",
+                "description": "Vraća sve informacije o klubu uz pomoć idkluba i sadrži JSON-LD specifikaciju",
                 "responses": {
                     "200": {
                         "description": "Fetched requested club",

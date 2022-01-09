@@ -157,7 +157,61 @@ app.get('/kosarka/:id(\\d+)', async function (req, res, next) {
   }
 })
 
+app.get('/kosarka/:id(\\d+)/:brdres(\\d+)', async function (req, res, next) {
+  var id = req.params.id;
+  var brdres = req.params.brdres;
+  const sql = "SELECT * FROM klub natural join igrac natural join trener where idklub=$1 and brojdresa=$2";
+  const data = (await db.query(sql, [id, brdres])).rows;
+  const id_x="SELECT imeigrac,prezimeigrac FROM klub natural join igrac where idklub=$1 and brojdresa=$2";
+  const player = (await db.query(id_x, [id, brdres])).rows;
+  const klubsql="SELECT imeklub,arenaklub,savdrzava,godosnutka FROM klub natural join igrac where idklub=$1 and brojdresa=$2";
+  const klub=(await db.query(klubsql, [id, brdres])).rows;
+  const playerrestsql="SELECT brojdresa,pozicijaigrac,uni_hs_club FROM klub natural join igrac where idklub=$1 and brojdresa=$2";
+  const playerrest=(await db.query(playerrestsql, [id, brdres])).rows;
+  const coachsql="SELECT * FROM trener where idklub=$1";
+  const coach=(await db.query(coachsql, [id])).rows;
+  if (data.length > 0) {
+    res.set('content-type', 'application/ld+json');
+    res.status(200);
+    res.json({
+      "status": "OK",
+      "message": "Fetched club info with requested player",
+      "reponse": {
+        "name": "Player info with club and coach",
+        "rel": "kosarkaski_klubovi",
+        "@context": {
+          "@vocab": "http://schema.org/",
+          "player": "https://schema.org/Person",
+          "imeigrac":"givenName",
+          "prezimeigrac":"familyName",
+          "coach":"https://schema.org/Person",
+          "imetrener":"givenName",
+          "prezimetrener":"familyName",
+          "klub": "https://schema.org/SportsTeam",
+          "imeklub":"legalName",
+          "arenaklub": "https://schema.org/StadiumOrArena",
+          "godosnutka":"foundingDate",
+          "savdrzava": "https://schema.org/State",
+          },
+          "idklub": id,
+          klub,
+          player,
+          playerrest,
+          coach
 
+      }
+    });
+  }
+  else {
+    res.set('content-type', 'application/json');
+    res.status(404)
+    res.json({
+      status: 'Not Found',
+      message: 'Requested item was not found in the DB',
+      response: null
+    });
+  }
+})
 
 
 app.get('/igrac/:id(\\d+)/:brdres(\\d+)', async function (req, res, next) {
@@ -165,9 +219,15 @@ app.get('/igrac/:id(\\d+)/:brdres(\\d+)', async function (req, res, next) {
   var brdres = req.params.brdres;
   const sql = "SELECT imeigrac,prezimeigrac,brojdresa,pozicijaigrac,uni_hs_club,imeklub,idklub FROM klub natural join igrac where idklub=$1 and brojdresa=$2";
   const data = (await db.query(sql, [id, brdres])).rows;
+  const id_x="SELECT imeigrac,prezimeigrac FROM klub natural join igrac where idklub=$1 and brojdresa=$2";
+  const player = (await db.query(id_x, [id, brdres])).rows;
+  const klubsql="SELECT imeklub,idklub FROM klub natural join igrac where idklub=$1 and brojdresa=$2";
+  const klub=(await db.query(klubsql, [id, brdres])).rows;
+  const playerrestsql="SELECT brojdresa,pozicijaigrac,uni_hs_club FROM klub natural join igrac where idklub=$1 and brojdresa=$2";
+  const playerrest=(await db.query(playerrestsql, [id, brdres])).rows;
 
   if (data.length > 0) {
-    res.set('content-type', 'application/json');
+    res.set('content-type', 'application/ld+json');
     res.status(200);
     res.json({
       "status": "OK",
@@ -175,8 +235,19 @@ app.get('/igrac/:id(\\d+)/:brdres(\\d+)', async function (req, res, next) {
       "reponse": {
         "name": "Specific basketball player from a specific club",
         "rel": "igrac",
-        "Igrac":
-          data
+        "@context": {
+          "@vocab": "http://schema.org/",
+          "klub": "https://schema.org/SportsTeam",
+          "imeklub":"legalName",
+          "player": "https://schema.org/Person",
+          "imeigrac":"givenName",
+          "prezimeigrac":"familyName"
+          },
+          player,
+          playerrest,
+          klub
+
+          
       }
     });
   }
@@ -199,6 +270,10 @@ app.get('/trener/:id(\\d+)', async function (req, res, next) {
   var id = req.params.id;
   const sql = "SELECT imetrener,prezimetrener,imeklub,idklub FROM klub natural join trener where idklub=$1";
   const data = (await db.query(sql, [id])).rows;
+  const coachsql="SELECT * FROM trener where idklub=$1";
+  const coach=(await db.query(coachsql, [id])).rows;
+  const klubsql="SELECT imeklub,idklub FROM klub where idklub=$1";
+  const klub=(await db.query(klubsql, [id])).rows;
 
   if (data.length > 0) {
     res.set('content-type', 'application/json');
@@ -209,8 +284,17 @@ app.get('/trener/:id(\\d+)', async function (req, res, next) {
       "reponse": {
         "name": "Coach from a specific basketball club",
         "rel": "trener",
-        "Trener":
-          data
+        "@context": {
+          "@vocab": "http://schema.org/",
+          "coach":"https://schema.org/Person",
+          "imetrener":"givenName",
+          "prezimetrener":"familyName",
+          "klub": "https://schema.org/SportsTeam",
+          "imeklub":"legalName"
+          },
+          coach,
+          klub
+
       }
     });
   }
@@ -267,6 +351,8 @@ app.get('/klub/:id(\\d+)', async function (req, res, next) {
   var id = req.params.id;
   const sql = "SELECT * FROM klub where idklub=$1";
   const data = (await db.query(sql, [id])).rows;
+  const klubsql="SELECT * FROM klub where idklub=$1";
+  const klub=(await db.query(klubsql, [id])).rows;
 
   if (data.length > 0) {
     res.set('content-type', 'application/json');
@@ -277,8 +363,15 @@ app.get('/klub/:id(\\d+)', async function (req, res, next) {
       "reponse": {
         "name": "Basketball clubs requested by id",
         "rel": "klubovi",
-        "Klubovi":
-          data
+        "@context": {
+          "@vocab": "http://schema.org/",
+          "klub": "https://schema.org/SportsTeam",
+          "imeklub":"legalName",
+          "arenaklub": "https://schema.org/StadiumOrArena",
+          "godosnutka":"foundingDate",
+          "savdrzava": "https://schema.org/State"
+          },
+          klub
       }
     });
   }

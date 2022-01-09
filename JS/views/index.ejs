@@ -53,14 +53,33 @@
 
 <body class="w3-black">
     <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-        <a href="/" class="w3-bar-item w3-button w3-padding-large w3-black">
-            <i class="fa fa-home w3-xxlarge"></i>
-            <p>HOME</p>
-        </a>
-        <a href="/db" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-            <i class="fa fa-database w3-xxlarge"></i>
-            <p>DATABASE</p>
-        </a>
+        <% if (locals.user && x==1) { %>
+            <a href="/" class="w3-bar-item w3-button w3-padding-large w3-black">
+                <i class="fa fa-home w3-xxlarge"></i>
+                <p>HOME</p>
+            </a>
+            <a href="/db" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+                <i class="fa fa-database w3-xxlarge"></i>
+                <p>DATABASE</p>
+            </a>
+            <a href="/profile" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+                <i class="fa fa-user w3-xxlarge"></i>
+                <p>PROFILE</p>
+            </a>
+            <a href="/" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+                <i class="fa fa-floppy-o w3-xxlarge"></i>
+                <p>REFRESH DATA</p>
+            </a>
+            <a href="/logoutt" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+                <i class="fa fa-times w3-xxlarge"></i>
+                <p>LOGOUT</p>
+            </a>
+        <% } else { %>
+            <a href="/login" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+                <i class="fa fa-key w3-xxlarge"></i>
+                <p>LOGIN</p>
+            </a>
+        <% } %>
     </nav>
 
     <div class="w3-padding-large" id="main">

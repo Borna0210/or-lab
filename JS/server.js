@@ -7,11 +7,14 @@ var bodyParser = require('body-parser');
 const fs = require('fs');
 const ObjectsToCsv = require('objects-to-csv')
 var cors = require('cors');
+const dotenv = require('dotenv');
+const { auth } = require('express-openid-connect');
+const { requiresAuth } = require('express-openid-connect');
 app.use(cors());
 
 
 //uvoz modula s definiranom funkcionalnosti ruta
-
+dotenv.config();
 
 
 //middleware - predlošci (ejs)
@@ -30,20 +33,45 @@ app.use(express.urlencoded({
   extended: true
 }));
 app.use('/views', express.static('views'))
+
+
+const config = {
+  authRequired: false,
+  auth0Logout: true
+};
+
+const port = process.env.PORT || 3000;
+if (!config.baseURL && !process.env.BASE_URL && process.env.PORT && process.env.NODE_ENV !== 'production') {
+  config.baseURL = `http://localhost:${port}`;
+}
+
+app.use(auth(config));
+app.use(function (req, res, next) {
+  res.locals.user = req.oidc.user;
+  next();
+});
+
+var y=0;
 app.get('/', async function (req, res, next) {
   const sql = 'SELECT * FROM klub natural join igrac natural join trener order by idklub';
   try {
     const data = (await db.query(sql, [])).rows;
     fs.writeFileSync("views/kosarkaski_klubovi.json", JSON.stringify(data))
     const csv = new ObjectsToCsv(data)
-    await csv.toDisk('./views/kosarkaski_klubovi.csv')
-    res.render('index', {});
+    await csv.toDisk('./views/kosarkaski_klubovi.csv');
+    if(y==1){
+    res.render('index', {x:0,isAuthenticated: req.oidc.isAuthenticated()});
+    y=0;
+  }
+    else{
+      res.render('index', {x:1,isAuthenticated: req.oidc.isAuthenticated()});
+    }
   } catch (err) {
     console.log(err);
   }
 });
 
-app.get('/db', async function (req, res, next) {
+app.get('/db',requiresAuth(), async function (req, res, next) {
   const sql = 'SELECT * FROM klub natural join igrac natural join trener order by idklub';
   try {
     const data = (await db.query(sql, [])).rows;
@@ -53,7 +81,22 @@ app.get('/db', async function (req, res, next) {
   }
 });
 
+app.get('/profile',requiresAuth(), async function (req, res, next) {
+  try {
+    res.render('profile', {});
+  } catch (err) {
+    console.log(err);
+  }
+});
 
+app.get('/logoutt',requiresAuth(), async function (req, res, next) {
+  try {
+    y=1;
+    res.redirect("/")
+  } catch (err) {
+    console.log(err);
+  }
+});
 
 app.get('/kosarka', async function (req, res, next) {
   const sql = 'SELECT * FROM klub natural join igrac natural join trener';
